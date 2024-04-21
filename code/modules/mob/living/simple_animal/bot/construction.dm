@@ -538,3 +538,50 @@
 				A.name = created_name
 				qdel(I)
 				qdel(src)
+
+//Vim Assembly
+/obj/item/bot_assembly/vim
+	name = "incomplete vim assembly"
+	desc = "A space helmet with a leg attached to it. Looks like it needs another leg, if it is to become something."
+	icon_state = "vim_0"
+	created_name = "\improper Vim"
+
+/obj/item/bot_assembly/vim/attackby(obj/item/I, mob/user, params)
+	..()
+	switch(build_step)
+		if(ASSEMBLY_FIRST_STEP)
+			if((istype(I, /obj/item/bodypart/l_leg/robot)) || (istype(I, /obj/item/bodypart/r_leg/robot)))
+				if(!user.temporarilyRemoveItemFromInventory(I))
+					return
+				to_chat(user,"<span class='notice'>You add the [I] to [src]!</span>")
+				icon_state = "vim_1"
+				desc = "Some kind of incomplete mechanism. It seems to be missing the headlights."
+				qdel(I)
+				build_step++
+
+		if(ASSEMBLY_SECOND_STEP)
+			if(istype(I, /obj/item/flashlight))
+				if(!user.temporarilyRemoveItemFromInventory(I))
+					return
+				to_chat(user,"<span class='notice'>You add the [I] to [src]!</span>")
+				icon_state = "vim_2"
+				desc = "Some kind of incomplete mechanism. The flashlight is added, but not secured."
+				qdel(I)
+				build_step++
+
+		if(ASSEMBLY_THIRD_STEP)
+			if(I.tool_behaviour == TOOL_SCREWDRIVER)
+				to_chat(user, "You secure the flashlight")
+				icon_state = "vim_3"
+				desc = "Some kind of incomplete mechanism. It seems nearly completed, and just needs a voice assembly."
+				qdel(I)
+				build_step++
+
+		if(ASSEMBLY_FOURTH_STEP)
+			if(istype(I, /obj/item/assembly/voice))
+				if(!can_finish_build(part, user))
+					return
+				to_chat(user, "assembly finished")
+				var/obj/vehicle/sealed/car/vim/new_vim = new(drop_location())
+				new_vim.name = created_name
+				qdel(I)

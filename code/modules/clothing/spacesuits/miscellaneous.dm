@@ -310,6 +310,19 @@ Contains:
 	flash_protect = 0
 	armor = list(MELEE = 0,  BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 100, RAD = 20, FIRE = 50, ACID = 65, STAMINA = 0)
 
+/obj/item/clothing/head/helmet/space/eva/attackby(obj/item/I, mob/user, params)
+	if((istype(I, /obj/item/bodypart/l_arm/robot)) || (istype(I, /obj/item/bodypart/r_arm/robot)))
+		return
+		if(!user.temporarilyRemoveItemFromInventory(I))
+			return
+		qdel(I)
+		to_chat(user, "<span class='notice'>leg attached</span>")
+		var/obj/item/bot_assembly/vim = new
+		qdel(src)
+		user.put_in_hands(A)
+	else
+		return ..()
+
 /obj/item/clothing/head/helmet/space/freedom
 	name = "eagle helmet"
 	desc = "An advanced, space-proof helmet. It appears to be modeled after an old-world eagle."
