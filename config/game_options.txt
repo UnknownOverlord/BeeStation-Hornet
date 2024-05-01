@@ -40,7 +40,7 @@ BADGES
 ## To speed things up make the number negative, to slow things down, make the number positive.
 
 ## These modify the run/walk speed of all mobs before the mob-specific modifiers are applied.
-RUN_DELAY 2
+RUN_DELAY 1.5
 WALK_DELAY 3.5
 
 ## The variables below affect the movement of specific mob types. THIS AFFECTS ALL SUBTYPES OF THE TYPE YOU CHOOSE!
@@ -664,13 +664,13 @@ DISABLE_LOCAL_BANS
 ## Virology tweaks
 
 ## Allow the Virologist job to be picked.
-#ALLOW_VIROLOGIST
+ALLOW_VIROLOGIST
 
 ##Uncomment to allow most virus recipes to work
-#CHEMVIRO_ALLOWED
+CHEMVIRO_ALLOWED
 
 ##Uncomment to allow the virus extrapolator to isolate virus symptoms
-#ISOLATION_ALLOWED
+ISOLATION_ALLOWED
 
 ##Uncomment to allow Formaldehyde to be used to neuter viruses, as well as other utility chems (synaptizine, cryostylane) to function
 NEUTER_ALLOWED

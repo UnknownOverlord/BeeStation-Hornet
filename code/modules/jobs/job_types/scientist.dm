@@ -9,7 +9,7 @@
 	total_positions = 5
 	spawn_positions = 3
 	selection_color = "#ffeeff"
-	exp_requirements = 120
+	exp_requirements = 0
 	exp_type = EXP_TYPE_CREW
 
 	outfit = /datum/outfit/job/scientist

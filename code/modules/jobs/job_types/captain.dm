@@ -12,8 +12,8 @@
 	spawn_positions = 1
 	selection_color = "#ccccff"
 	req_admin_notify = 1
-	minimal_player_age = 14
-	exp_requirements = 1200
+	minimal_player_age = 0
+	exp_requirements = 0
 	exp_type = EXP_TYPE_COMMAND
 	exp_type_department = EXP_TYPE_COMMAND
 

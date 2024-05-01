@@ -9,8 +9,8 @@
 	total_positions = 0
 	spawn_positions = 0
 	selection_color = "#ffeeee"
-	minimal_player_age = 7
-	exp_requirements = 180
+	minimal_player_age = 0
+	exp_requirements = 0
 	exp_type = EXP_TYPE_CREW
 
 	outfit = /datum/outfit/job/deputy

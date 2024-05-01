@@ -8,8 +8,8 @@
 	faction = "Station"
 	total_positions = 3
 	spawn_positions = 3
-	minimal_player_age = 3
-	exp_requirements = 900
+	minimal_player_age = 0
+	exp_requirements = 0
 	exp_type = EXP_TYPE_CREW
 	selection_color = "#ffeeff"
 

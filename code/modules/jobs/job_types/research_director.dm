@@ -12,8 +12,8 @@
 	spawn_positions = 1
 	selection_color = "#ffddff"
 	req_admin_notify = 1
-	minimal_player_age = 7
-	exp_requirements = 1200
+	minimal_player_age = 0
+	exp_requirements = 0
 	exp_type = EXP_TYPE_SCIENCE
 	exp_type_department = EXP_TYPE_SCIENCE
 
